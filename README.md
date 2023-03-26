@@ -2,26 +2,41 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
 
-## Development server
+## Steps to create this project
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+#### 1. Create empty angular workspace with angular CLI
 
-## Code scaffolding
+    ng new <workspace_name> --create-application=false
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### 2. Create shell and remote application
 
-## Build
+    ng g app shell
+and 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    ng g app remote
 
-## Running unit tests
+This will create a projects folder with two applications inside it.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### 3. Add [@angular-architects/module-federation](https://www.npmjs.com/package/@angular-architects/module-federation) package to shell and remote app
 
-## Running end-to-end tests
+    ng add @angular-architects/module-federation --project=shell --port=5000
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+and 
 
-## Further help
+    ng add @angular-architects/module-federation --project=remote --port=4000
+
+This will create webpack.config.js file to both the applications with default configurations.
+
+#### 4. Create a separate module in remote application with a component and setup the component's routing in the module.
+
+#### 5. Import the module in app.module.ts file of the remote project.
+
+#### 6. Uncomment following code in remote project's webpack.config.js file.
+
+![webpack.config.js code](/projects/remote/src/assets/remote-config.png?raw=true")
+
+
+
+## Support
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
