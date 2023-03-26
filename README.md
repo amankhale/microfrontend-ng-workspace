@@ -31,10 +31,15 @@ This will create webpack.config.js file to both the applications with default co
 
 #### 5. Import the module in app.module.ts file of the remote project.
 
-#### 6. Uncomment following code in remote project's webpack.config.js file.
+#### 6. Uncomment following code in remote project's webpack.config.js file and add path to newly created module of remote project.
 
 ![webpack.config.js code](/projects/remote/src/assets/remote-config.png?raw=true")
 
+#### 7. Add routing of remote project inside app.routing-module.ts file of shell project as follows
+
+![shell project routing code](/projects/remote/src/assets/routing-of-remote.png?raw=true")
+
+#### 8. Now, you can access remote project's component in shell project.
 
 
 ## Support
